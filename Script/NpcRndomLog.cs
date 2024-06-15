@@ -7,19 +7,17 @@ using System;
 
 public class NpcRndomLog : MonoBehaviour
 {
-    public GameObject log1; // Log1을 드래그 앤 드롭으로 할당
-    public GameObject log2; // Log2를 드래그 앤 드롭으로 할당
-    public GameObject log3; // Log3을 드래그 앤 드롭으로 할당
+    public GameObject log1;
+    public GameObject log2;
+    public GameObject log3;
 
     private GameObject[] logs;
     private GameObject activeLog;
 
     void Start()
     {
-        // logs 배열에 Log 오브젝트들을 할당합니다.
         logs = new GameObject[] { log1, log2, log3 };
 
-        // 모든 로그를 시작 시 비활성화합니다.
         foreach (var log in logs)
         {
             if (log != null)
