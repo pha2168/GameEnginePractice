@@ -18,14 +18,13 @@ public class MonsterDie : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("Die");
-            Destroy(other.gameObject); // 부딪힌 화살 제거
+            Destroy(other.gameObject);
             StartCoroutine(DestroyAfterAnimation());
         }
     }
 
     IEnumerator DestroyAfterAnimation()
     {
-        // 애니메이션이 끝날 때까지 기다림
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }
