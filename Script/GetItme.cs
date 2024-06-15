@@ -11,7 +11,6 @@ public class GetItme : MonoBehaviour
     private GameObject triggerObject;
 
 
-    // 트리거에 들어왔을 때 처리
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -20,7 +19,6 @@ public class GetItme : MonoBehaviour
         }
     }
 
-    // 트리거를 나갔을 때 처리
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
