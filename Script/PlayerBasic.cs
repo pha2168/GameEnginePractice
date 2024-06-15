@@ -24,10 +24,8 @@ public class PlayerBasic : MonoBehaviour
 
         if (move != 0)
         {
-            // 이동
             transform.Translate(Vector3.right * move * moveSpeed * Time.deltaTime);
 
-            // 플레이어 회전
             if (move > 0 && !isFacingRight)
             {
                 Flip();
@@ -37,12 +35,10 @@ public class PlayerBasic : MonoBehaviour
                 Flip();
             }
 
-            // 걷기 애니메이션 재생
             animator.SetBool("Walk", true);
         }
         else
         {
-            // 걷기 애니메이션 중지
             animator.SetBool("Walk", false);
         }
     }
