@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeOutCanvas3 : MonoBehaviour
 {
-    public CanvasGroup canvasGroup; // UI 요소의 CanvasGroup을 참조
+    public CanvasGroup canvasGroup;
 
     // Update is called once per frame
     void Update()
@@ -18,13 +18,12 @@ public class FadeOutCanvas3 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        // 페이드 아웃 코루틴 시작
         StartCoroutine(FadeOutAndDisable());
     }
 
     IEnumerator FadeOutAndDisable()
     {
-        float duration = 0.5f; // 페이드 아웃 지속 시간
+        float duration = 0.5f;
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
@@ -34,7 +33,6 @@ public class FadeOutCanvas3 : MonoBehaviour
             yield return null;
         }
 
-        // 페이드 아웃이 완료되면 오브젝트를 비활성화합니다.
         gameObject.SetActive(false);
     }
 }
