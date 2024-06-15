@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SkipScene : MonoBehaviour
 {
-    public string sceneName; // 이동할 씬의 이름
+    public string sceneName;
 
     void Update()
     {
-        // E 키가 눌렸는지 확인
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // 씬 전환
             SceneManager.LoadScene(sceneName);
         }
     }
