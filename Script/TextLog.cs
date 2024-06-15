@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class TextLog : MonoBehaviour
 {
-    public Text uiText; // 타이핑 효과를 적용할 UI 텍스트
-    public string fullText; // 전체 텍스트 내용
-    public float delay = 0.1f; // 각 글자 사이의 딜레이 시간
+    public Text uiText;
+    public string fullText;
+    public float delay = 0.1f;
 
     private string currentText = "";
 
