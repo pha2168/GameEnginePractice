@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class BlinkText : MonoBehaviour
 {
-    public Text uiText; // UI 텍스트 컴포넌트를 연결
-    public float fadeDuration = 1f; // 페이드 인/아웃 시간
+    public Text uiText;
+    public float fadeDuration = 1f;
 
     private float timer = 0f;
     private bool isFadingIn = true;
@@ -13,7 +13,6 @@ public class BlinkText : MonoBehaviour
     {
         if (isFadingIn)
         {
-            // 페이드 인: 알파 값을 증가시킴
             timer += Time.deltaTime / fadeDuration;
             if (timer >= 1f)
             {
@@ -23,7 +22,6 @@ public class BlinkText : MonoBehaviour
         }
         else
         {
-            // 페이드 아웃: 알파 값을 감소시킴
             timer -= Time.deltaTime / fadeDuration;
             if (timer <= 0f)
             {
@@ -32,7 +30,6 @@ public class BlinkText : MonoBehaviour
             }
         }
 
-        // 알파 값 설정
         Color color = uiText.color;
         color.a = timer;
         uiText.color = color;
