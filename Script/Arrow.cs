@@ -8,11 +8,10 @@ public class Arrow : MonoBehaviour
 
     void Start()
     {
-        // È­»ìÀÌ ÇÃ·¹ÀÌ¾îÀÇ Àü¹æÀ¸·Î ÀÌµ¿ÇÏµµ·Ï ¼³Á¤
+        // í™”ì‚´ì´ í”Œë ˆì´ì–´ì˜ ì „ë°©ìœ¼ë¡œ ì´ë™í•˜ë„ë¡ ì„¤ì •
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * speed; // forward ´ë½Å upÀ» »ç¿ëÇÕ´Ï´Ù.
+        rb.velocity = transform.up * speed; // forward ëŒ€ì‹  upì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
 
-        // 10ÃÊ ÈÄ¿¡ È­»ìÀ» Á¦°Å
         Destroy(gameObject, 3f);
     }
 }
