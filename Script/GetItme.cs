@@ -5,40 +5,38 @@ using UnityEngine.UI;
 
 public class GetItme : MonoBehaviour
 {
-    public GameObject itemCanvas;  // Item Äµ¹ö½º¸¦ µå·¡±× ¾Ø µå·ÓÀ¸·Î ÇÒ´ç
+    public GameObject itemCanvas;
     public GameObject Light;
-    public RawImage ItmeImage;  // Book ÀÌ¹ÌÁö¸¦ ÂüÁ¶ÇÒ º¯¼ö
-    private GameObject triggerObject;  // Æ®¸®°Å ¿ÀºêÁ§Æ®¸¦ ÂüÁ¶ÇÒ º¯¼ö
+    public RawImage ItmeImage;
+    private GameObject triggerObject;
 
 
-    // Æ®¸®°Å¿¡ µé¾î¿ÔÀ» ¶§ Ã³¸®
+    // íŠ¸ë¦¬ê±°ì— ë“¤ì–´ì™”ì„ ë•Œ ì²˜ë¦¬
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            triggerObject = collision.gameObject;  // Æ®¸®°Å ¿ÀºêÁ§Æ®¸¦ ÀúÀåÇÕ´Ï´Ù.
+            triggerObject = collision.gameObject;
         }
     }
 
-    // Æ®¸®°Å¸¦ ³ª°¬À» ¶§ Ã³¸®
+    // íŠ¸ë¦¬ê±°ë¥¼ ë‚˜ê°”ì„ ë•Œ ì²˜ë¦¬
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            triggerObject = null;  // Æ®¸®°Å ¿ÀºêÁ§Æ®¸¦ null·Î ¼³Á¤ÇÕ´Ï´Ù.
+            triggerObject = null;
         }
     }
 
     void Update()
     {
-        // F Å°°¡ ´­¸®°í Æ®¸®°Å ¿ÀºêÁ§Æ®°¡ Á¸ÀçÇÒ ¶§ Ã³¸®
         if (Input.GetKeyDown(KeyCode.F) && triggerObject != null)
         {
             ActivateBookImageAndDestroyTrigger();
         }
     }
 
-    // Book ÀÌ¹ÌÁö¸¦ È°¼ºÈ­ÇÏ°í Æ®¸®°Å ¿ÀºêÁ§Æ®¸¦ »èÁ¦ÇÏ´Â ¸Ş¼­µå
     void ActivateBookImageAndDestroyTrigger()
     {
         ItmeImage.gameObject.SetActive(true);
